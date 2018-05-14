@@ -24,6 +24,7 @@
 		50D580D120A9035600F65D61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50D580D320A9035600F65D61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50D580D920A904DA00F65D61 /* QuoteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCollectionViewCell.swift; sourceTree = "<group>"; };
+		50D580DB20A91C6000F65D61 /* InspirationalReminders.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InspirationalReminders.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +57,7 @@
 		50D580C620A9035400F65D61 /* InspirationalReminders */ = {
 			isa = PBXGroup;
 			children = (
+				50D580DB20A91C6000F65D61 /* InspirationalReminders.entitlements */,
 				50D580C720A9035400F65D61 /* AppDelegate.swift */,
 				50D580C920A9035500F65D61 /* ViewController.swift */,
 				50D580D920A904DA00F65D61 /* QuoteCollectionViewCell.swift */,
@@ -99,6 +101,11 @@
 				TargetAttributes = {
 					50D580C320A9035400F65D61 = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -284,6 +291,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = InspirationalReminders/InspirationalReminders.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UG659HW99G;
 				INFOPLIST_FILE = InspirationalReminders/Info.plist;
@@ -302,6 +310,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = InspirationalReminders/InspirationalReminders.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UG659HW99G;
 				INFOPLIST_FILE = InspirationalReminders/Info.plist;
