@@ -11,12 +11,33 @@ import UserNotifications
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    let notificationCenter =  UNUserNotificationCenter.current()
+    
     //Create reuse identifier for cell
     let cell = "cell"
-    let inspirationalQuotes = ["\"No one saves us but ourselves. No one can and no one may. We ourselves must walk the path.\" - Buddha",
+    let inspirationalQuotes = [
+        "\"No one saves us but ourselves. No one can and no one may. We ourselves must walk the path.\" - Buddha",
         "\"Give, even if you only have a little.\" - Buddah",
         "\"Even as a solid rock is unshaken by the wind, so are the wise unshaken by praise or blame.\" - Buddah",
         "\"Nothing can harm you as much as your own thoughts unguarded.\" - Buddah"]
+       
+    override func viewDidAppear(_ animated: Bool) {
+        
+        self.notificationCenter.getNotificationSettings { (settings) in
+            
+            if settings.authorizationStatus != .authorized {
+                DispatchQueue.main.async {
+                    
+                    let options: UNAuthorizationOptions = [.alert]
+                    
+                    self.notificationCenter.requestAuthorization(options: options, completionHandler: { (granted, error) in
+                        
+                    })
+                    
+                }
+            }
+        }
+    }
     
     //Define number of cells in collection view
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -42,13 +63,15 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let selectedQuote = self.inspirationalQuotes[indexPath.item]
+        let quote = self.inspirationalQuotes[indexPath.item]
         
         //Set up alert to confirm or cancel selection of quote user wants to be reminded of
         let alertController = UIAlertController(title: "Great Selection!", message:
-            "Would you like to be reminded of this fab quote: \(selectedQuote)?", preferredStyle: UIAlertControllerStyle.alert)
+            "Would you like to be reminded of this fab quote: \(quote)?", preferredStyle: UIAlertControllerStyle.alert)
         
         let confirmAction = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.default) { (action) in
+            
+            self.createNotification(withQuote: quote)
             
         }
         
@@ -67,9 +90,21 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         print("Cell selected at \(indexPath.item)")
     }
     
-    func scheduleNotification (withQuote quote: String) {
+    func createNotification (withQuote quote: String) {
+       
+        let content = UNMutableNotificationContent()
+        content.title = "Inspirational Reminder"
+        content.body = quote
         
+        self.scheduleNotification(withContent: content)
         
+    }
+    
+    func scheduleNotification(withContent content: UNMutableNotificationContent) {
+        
+        //Trigger is set to default if not specified
+        let request = UNNotificationRequest(identifier: "InspirationalQuote", content: content, trigger: nil)
+        self.notificationCenter.add(request, withCompletionHandler: nil)
         
     }
 }
