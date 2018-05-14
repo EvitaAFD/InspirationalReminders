@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inspirational Quotes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smU-K9-2oj">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inspirational Quotes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="smU-K9-2oj">
                                 <rect key="frame" x="72" y="28" width="230" height="43"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
@@ -41,15 +41,20 @@
                                             <rect key="frame" x="0.0" y="0.0" width="319" height="228"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffm-Ic-TBl">
-                                                    <rect key="frame" x="138" y="104" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffm-Ic-TBl">
+                                                    <rect key="frame" x="20" y="12" width="279" height="204"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="ffm-Ic-TBl" firstAttribute="leading" secondItem="abR-Z4-m7F" secondAttribute="leading" constant="20" id="LR2-C3-G7J"/>
+                                            <constraint firstItem="ffm-Ic-TBl" firstAttribute="top" secondItem="abR-Z4-m7F" secondAttribute="top" constant="12" id="SVC-rx-qu4"/>
+                                            <constraint firstAttribute="bottom" secondItem="ffm-Ic-TBl" secondAttribute="bottom" constant="12" id="YlO-tp-ORl"/>
+                                            <constraint firstAttribute="trailing" secondItem="ffm-Ic-TBl" secondAttribute="trailing" constant="20" id="gsx-AY-rga"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="cellLabel" destination="ffm-Ic-TBl" id="LgF-d5-nka"/>
                                         </connections>

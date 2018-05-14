@@ -12,7 +12,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     //Create reuse identifier for cell
     let cell = "cell"
-    var inspirationalQuotes = ["1", "2", "3", "4"]
+    var inspirationalQuotes = ["\"No one saves us but ourselves. No one can and no one may. We ourselves must walk the path.\" - Buddha", "\"Give, even if you only have a little.\" - Buddah", "\"Even as a solid rock is unshaken by the wind, so are the wise unshaken by praise or blame.\" - Buddah", "\"Nothing can harm you as much as your own thoughts unguarded.\" - Buddah"]
     
     //Define number of cells in collection view
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -38,6 +38,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let alertController = UIAlertController(title: "Great Selection!", message:
             "Would you like to be reminded of this fab quote?", preferredStyle: UIAlertControllerStyle.alert)
         alertController.addAction(UIAlertAction(title: "Confirm", style: UIAlertActionStyle.default,handler: nil))
+      
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.cancel, handler: nil))
         
         self.present(alertController, animated: true, completion: nil)
         print("Cell selected at \(indexPath.item)")
