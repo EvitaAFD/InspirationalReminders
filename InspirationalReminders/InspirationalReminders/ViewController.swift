@@ -35,6 +35,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        let alertController = UIAlertController(title: "Great Selection!", message:
+            "Would you like to be reminded of this fab quote?", preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "Confirm", style: UIAlertActionStyle.default,handler: nil))
+        
+        self.present(alertController, animated: true, completion: nil)
         print("Cell selected at \(indexPath.item)")
     }
 
