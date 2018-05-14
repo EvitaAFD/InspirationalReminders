@@ -19,13 +19,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inspirational Quotes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="smU-K9-2oj">
-                                <rect key="frame" x="72" y="28" width="230" height="43"/>
+                                <rect key="frame" x="72" y="36" width="230" height="43"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bbi-Ay-roe">
-                                <rect key="frame" x="28" y="87" width="319" height="580"/>
+                                <rect key="frame" x="28" y="110" width="319" height="557"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5vG-6U-Yuj">
                                     <size key="itemSize" width="319" height="228"/>
@@ -49,6 +49,7 @@
                                                 </label>
                                             </subviews>
                                         </view>
+                                        <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="0.19814854452054795" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="ffm-Ic-TBl" firstAttribute="leading" secondItem="abR-Z4-m7F" secondAttribute="leading" constant="20" id="LR2-C3-G7J"/>
                                             <constraint firstItem="ffm-Ic-TBl" firstAttribute="top" secondItem="abR-Z4-m7F" secondAttribute="top" constant="12" id="SVC-rx-qu4"/>
@@ -69,13 +70,13 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="bbi-Ay-roe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="28" id="Bbz-YL-3wc"/>
-                            <constraint firstItem="smU-K9-2oj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="DGY-UB-2uh"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="smU-K9-2oj" secondAttribute="bottom" constant="596" id="IAa-WR-Yem"/>
+                            <constraint firstItem="smU-K9-2oj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="DGY-UB-2uh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="smU-K9-2oj" secondAttribute="bottom" constant="588" id="IAa-WR-Yem"/>
                             <constraint firstItem="bbi-Ay-roe" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="K7o-Ov-VJe"/>
                             <constraint firstItem="smU-K9-2oj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="QtP-U5-WoY"/>
                             <constraint firstItem="smU-K9-2oj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="72" id="Thh-fJ-kWj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bbi-Ay-roe" secondAttribute="trailing" constant="28" id="boE-5D-x4Q"/>
-                            <constraint firstItem="bbi-Ay-roe" firstAttribute="top" secondItem="smU-K9-2oj" secondAttribute="bottom" constant="16" id="ngR-2J-UY8"/>
+                            <constraint firstItem="bbi-Ay-roe" firstAttribute="top" secondItem="smU-K9-2oj" secondAttribute="bottom" constant="31" id="ngR-2J-UY8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

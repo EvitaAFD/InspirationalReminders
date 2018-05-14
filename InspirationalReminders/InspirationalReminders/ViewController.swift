@@ -28,17 +28,19 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! QuoteCollectionViewCell
         
         cell.cellLabel.text = self.inspirationalQuotes[indexPath.item]
-        cell.backgroundColor = .blue
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        //Set up alert to confirm or cancel selection of quote user wants to be reminded of
         let alertController = UIAlertController(title: "Great Selection!", message:
             "Would you like to be reminded of this fab quote?", preferredStyle: UIAlertControllerStyle.alert)
         alertController.addAction(UIAlertAction(title: "Confirm", style: UIAlertActionStyle.default,handler: nil))
-      
+        
+      /* When confirm is pressed define content using UNMutableNotificationContent() to contain selected quote, likely using seleced indexPath, next set time for local notification to occur using DateComponents() to set one minute from selection, third, create and register request with the notification system, lastly be sure to cancel the request */
+        
         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.cancel, handler: nil))
         
         self.present(alertController, animated: true, completion: nil)
