@@ -116,7 +116,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func scheduleNotification(withContent content: UNMutableNotificationContent) {
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 30, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
         let request = UNNotificationRequest(identifier: "InspirationalQuote", content: content, trigger: trigger)
         
         // Set Category Identifier
