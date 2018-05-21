@@ -20,6 +20,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         "\"Give, even if you only have a little.\" - Buddah",
         "\"Even as a solid rock is unshaken by the wind, so are the wise unshaken by praise or blame.\" - Buddah",
         "\"Nothing can harm you as much as your own thoughts unguarded.\" - Buddah"]
+    
+    override func viewDidLoad() {
+        
+        configureUserNotificationCenter()
+    }
        
     override func viewDidAppear(_ animated: Bool) {
         
@@ -65,33 +70,27 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         let quote = self.inspirationalQuotes[indexPath.item]
         
-        //Set up alert to confirm or cancel selection of quote user wants to be reminded of
+        // Set up alert to confirm or cancel selection of quote user wants to be reminded of
         let alertController = UIAlertController(title: "Great Selection!", message:
             "Would you like to be reminded of this fab quote: \(quote)?", preferredStyle: UIAlertControllerStyle.alert)
         
         let confirmAction = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.default) { (action) in
-            
             self.createNotification(withQuote: quote)
             
         }
         
-        
         let dismissAction = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.cancel) { (action) in
-            
             
         }
         
         alertController.addAction(confirmAction)
         alertController.addAction(dismissAction)
         
-      /* When confirm is pressed define content using UNMutableNotificationContent() to contain selected quote, likely using seleced indexPath, next set time for local notification to occur using DateComponents() to set one minute from selection, third, create and register request with the notification system, lastly be sure to cancel the request */
-        
         self.present(alertController, animated: true, completion: nil)
         print("Cell selected at \(indexPath.item)")
     }
     
     func createNotification (withQuote quote: String) {
-       
         let content = UNMutableNotificationContent()
         content.title = "Inspirational Reminder"
         content.body = quote
@@ -101,11 +100,25 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func scheduleNotification(withContent content: UNMutableNotificationContent) {
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 30, repeats: false)
+        let request = UNNotificationRequest(identifier: "InspirationalQuote", content: content, trigger: trigger)
         
-        //Trigger is set to default if not specified
-        let request = UNNotificationRequest(identifier: "InspirationalQuote", content: content, trigger: nil)
         self.notificationCenter.add(request, withCompletionHandler: nil)
         
     }
+    
+    private func configureUserNotificationCenter() {
+        // Configure user notification cetner and assign delegate to self.
+        UNUserNotificationCenter.current().delegate = self
+    }
 }
+
+// MARK: 
+extension ViewController: UNUserNotificationCenterDelegate {
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert])
+    }
+}
+
 
