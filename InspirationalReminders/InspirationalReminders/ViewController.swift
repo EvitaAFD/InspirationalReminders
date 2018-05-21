@@ -148,6 +148,8 @@ extension ViewController: UNUserNotificationCenterDelegate {
     
     // Allows more control over how local notifcations are handled and allows us to see notification even if app is in foreground
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        
         completionHandler([.alert])
     }
     
