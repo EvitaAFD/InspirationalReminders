@@ -33,14 +33,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     //Create reuse identifier for cell
     let cell = "cell"
     let inspirationalQuotes = [
-        "\"No one saves us but ourselves. No one can and no one may. We ourselves must walk the path.\" - Buddha",
-        "\"Give, even if you only have a little.\" - Buddah",
-        "\"Even as a solid rock is unshaken by the wind, so are the wise unshaken by praise or blame.\" - Buddah",
-        "\"Nothing can harm you as much as your own thoughts unguarded.\" - Buddah",
-        "\"Winning isn’t everything, it’s the only thing. Vince Lombardi",
-        "\"The key is not the will to win… everybody has that. It is the will to prepare to win that is important.  Bobby Knight",
-        "\"I hated every minute of training, but I said, ’Don’t quit. Suffer now and live the rest of your life as a champion.  Muhammad Ali",
-        "\"Winning takes precedence over all. There’s no gray area. No almosts.  Kobe Bryant"]
+        "\"No one saves us but ourselves. No one can and no one may. We ourselves must walk the path.\" \n -Buddha",
+        "\"I hated every minute of training, but I said, ’Don’t quit. Suffer now and live the rest of your life as a champion.\" \n -Muhammad Ali",
+        "\"Give, even if you only have a little.\" \n -Buddah",
+        "\"Winning takes precedence over all. There’s no gray area. No almosts.\" \n -Kobe Bryant",
+        "\"Even as a solid rock is unshaken by the wind, so are the wise unshaken by praise or blame.\" \n -Buddah",
+        "\"The key is not the will to win… everybody has that. It is the will to prepare to win that is important.\" \n -Bobby Knight",
+        "\"Nothing can harm you as much as your own thoughts unguarded.\" \n -Buddah",
+        "\"Winning isn’t everything, it’s the only thing.\" \n -Vince Lombardi"]
     
     override func viewDidLoad() {
         
