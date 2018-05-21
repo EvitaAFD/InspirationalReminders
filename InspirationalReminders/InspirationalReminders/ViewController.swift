@@ -11,6 +11,8 @@ import UserNotifications
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    @IBOutlet var collectionView: UICollectionView!
+    
     // Create an instance of the UNNotificationActionClass
     struct Notification {
         
@@ -22,7 +24,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         struct Action {
             
             static let showQuote = "showQuote"
-            static let cancel = "cancel"
         }
         
     }
@@ -35,11 +36,31 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         "\"No one saves us but ourselves. No one can and no one may. We ourselves must walk the path.\" - Buddha",
         "\"Give, even if you only have a little.\" - Buddah",
         "\"Even as a solid rock is unshaken by the wind, so are the wise unshaken by praise or blame.\" - Buddah",
-        "\"Nothing can harm you as much as your own thoughts unguarded.\" - Buddah"]
+        "\"Nothing can harm you as much as your own thoughts unguarded.\" - Buddah",
+        "\"Winning isn’t everything, it’s the only thing. Vince Lombardi",
+        "\"The key is not the will to win… everybody has that. It is the will to prepare to win that is important.  Bobby Knight",
+        "\"I hated every minute of training, but I said, ’Don’t quit. Suffer now and live the rest of your life as a champion.  Muhammad Ali",
+        "\"Winning takes precedence over all. There’s no gray area. No almosts.  Kobe Bryant"]
     
     override func viewDidLoad() {
         
         configureUserNotificationCenter()
+    }
+    
+    
+    private func configureUserNotificationCenter() {
+        
+        // Configure user notification cetner and assign delegate to self.
+        UNUserNotificationCenter.current().delegate = self
+        
+        // Define action
+        let showQuoteAction = UNNotificationAction(identifier: Notification.Action.showQuote, title: "View Sweet Quote", options: [.foreground])
+        
+        // Define category for quotes to handle actions on alert, can add an unsubscribe action as well
+        let quoteCategory = UNNotificationCategory(identifier: "quote", actions: [showQuoteAction], intentIdentifiers: [], options: [])
+        
+        // Register category with notification center
+        UNUserNotificationCenter.current().setNotificationCategories([quoteCategory])
     }
        
     override func viewDidAppear(_ animated: Bool) {
@@ -111,35 +132,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         content.title = "Inspirational Reminder"
         content.body = quote
         
-        self.scheduleNotification(withContent: content)
-        
-    }
-    
-    func scheduleNotification(withContent content: UNMutableNotificationContent) {
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
-        let request = UNNotificationRequest(identifier: "InspirationalQuote", content: content, trigger: trigger)
-        
-        // Set Category Identifier
-        content.categoryIdentifier = Notification.Category.quote
+        content.categoryIdentifier = "quote"
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let request = UNNotificationRequest(identifier: quote, content: content, trigger: trigger)
         
         self.notificationCenter.add(request, withCompletionHandler: nil)
         
-    }
-    
-    private func configureUserNotificationCenter() {
-        
-        // Configure user notification cetner and assign delegate to self.
-        UNUserNotificationCenter.current().delegate = self
-        
-        // Define action
-        let showQuoteAction = UNNotificationAction(identifier: Notification.Action.showQuote, title: "View Sweet Quote", options: [.foreground])
-        let cancelQuoteDisplayAction = UNNotificationAction(identifier: Notification.Action.cancel, title: "Cancel", options: [.destructive])
-        
-        // Define category for quotes to handle actions on alert, can add an unsubscribe action as well
-        let quoteCategory = UNNotificationCategory(identifier: Notification.Category.quote, actions: [showQuoteAction, cancelQuoteDisplayAction], intentIdentifiers: [], options: [])
-        
-        // Register category with notification center
-        UNUserNotificationCenter.current().setNotificationCategories([quoteCategory])
     }
 }
 
@@ -148,19 +146,24 @@ extension ViewController: UNUserNotificationCenterDelegate {
     
     // Allows more control over how local notifcations are handled and allows us to see notification even if app is in foreground
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.alert])
+        completionHandler(.alert)
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         switch response.actionIdentifier {
         case Notification.Action.showQuote:
-            print("User taped to show quote")
-        case Notification.Action.cancel:
-            print("User canceled display")
+           let selectedQuote = response.notification.request.identifier
+           self.navigateToSelectedQuote(selectedQuote)
         default:
             print("Unidentified Action")
         }
         completionHandler()
+    }
+    
+    func navigateToSelectedQuote(_ selectedQuote: String) {
+        if let index = inspirationalQuotes.index(of: selectedQuote) {
+            self.collectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: UICollectionViewScrollPosition.centeredVertically, animated: true)
+        }
     }
 }
 
