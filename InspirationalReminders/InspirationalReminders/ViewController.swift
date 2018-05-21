@@ -11,6 +11,22 @@ import UserNotifications
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    // Create an instance of the UNNotificationActionClass
+    struct Notification {
+        
+        struct Category {
+            
+            static let quote = "quote"
+        }
+        
+        struct Action {
+            
+            static let showQuote = "showQuote"
+            static let cancel = "cancel"
+        }
+        
+    }
+    
     let notificationCenter =  UNUserNotificationCenter.current()
     
     //Create reuse identifier for cell
@@ -103,21 +119,48 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 30, repeats: false)
         let request = UNNotificationRequest(identifier: "InspirationalQuote", content: content, trigger: trigger)
         
+        // Set Category Identifier
+        content.categoryIdentifier = Notification.Category.quote
+        
         self.notificationCenter.add(request, withCompletionHandler: nil)
         
     }
     
     private func configureUserNotificationCenter() {
+        
         // Configure user notification cetner and assign delegate to self.
         UNUserNotificationCenter.current().delegate = self
+        
+        // Define action
+        let showQuoteAction = UNNotificationAction(identifier: Notification.Action.showQuote, title: "View Sweet Quote", options: [.foreground])
+        let cancelQuoteDisplayAction = UNNotificationAction(identifier: Notification.Action.cancel, title: "Cancel", options: [.destructive])
+        
+        // Define category for quotes to handle actions on alert, can add an unsubscribe action as well
+        let quoteCategory = UNNotificationCategory(identifier: Notification.Category.quote, actions: [showQuoteAction, cancelQuoteDisplayAction], intentIdentifiers: [], options: [])
+        
+        // Register category with notification center
+        UNUserNotificationCenter.current().setNotificationCategories([quoteCategory])
     }
 }
 
-// MARK: 
+// MARK: UNUserNotificationDelegate
 extension ViewController: UNUserNotificationCenterDelegate {
     
+    // Allows more control over how local notifcations are handled and allows us to see notification even if app is in foreground
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.alert])
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        switch response.actionIdentifier {
+        case Notification.Action.showQuote:
+            print("User taped to show quote")
+        case Notification.Action.cancel:
+            print("User canceled display")
+        default:
+            print("Unidentified Action")
+        }
+        completionHandler()
     }
 }
 
