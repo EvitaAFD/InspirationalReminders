@@ -9,6 +9,8 @@
 import UIKit
 import UserNotifications
 import UserNotificationsUI
+import Lottie
+
 
 class NotificationViewController: UIViewController, UNNotificationContentExtension {
 
@@ -24,3 +26,4 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
     }
 
 }
+

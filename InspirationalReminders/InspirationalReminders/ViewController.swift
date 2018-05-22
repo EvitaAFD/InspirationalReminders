@@ -29,6 +29,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
     }
     
+    let tomorrowAnimationView = LOTAnimationView(name: "logo_icon_blue_background")
     let notificationCenter =  UNUserNotificationCenter.current()
     
     //Create reuse identifier for cell
@@ -45,7 +46,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     override func viewDidLoad() {
         
+            
+        view.addSubview(tomorrowAnimationView)
         configureUserNotificationCenter()
+        
     }
     
     
@@ -132,18 +136,17 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let content = UNMutableNotificationContent()
         content.title = "Inspirational Reminder"
         content.body = quote
-
-       guard let tomorrowAnimation = UIImage.init(named: "DorothyHeadShot.jpg", in: .main, compatibleWith: nil) else { return }
-       if let attachment = UNNotificationAttachment.create(identifier: "tomorrowAnimation", image: tomorrowAnimation, options: nil) {
-           content.attachments = [attachment]
-    
-        }
-        
+//        
+//        
+//        if let attachment = UNNotificationAttachment.create(identifier: "attachmentIdentifier", image: image, options: nil) {
+//            content.attachments = [attachment]
+//        }
+//        
         content.categoryIdentifier = "quote"
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         let request = UNNotificationRequest(identifier: quote, content: content, trigger: trigger)
-        
         self.notificationCenter.add(request, withCompletionHandler: nil)
+        
         
     }
 }
