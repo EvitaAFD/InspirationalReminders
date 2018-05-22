@@ -1,0 +1,6 @@
+framework module Pods_InspirationalReminders {
+  umbrella header "Pods-InspirationalReminders-umbrella.h"
+
+  export *
+  module * { export * }
+}

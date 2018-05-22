@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		506B51FD20B4BD0700DE25AB /* Animations in Resources */ = {isa = PBXBuildFile; fileRef = 506B51FC20B4BD0700DE25AB /* Animations */; };
+		506B520020B4CFB500DE25AB /* DorothyHeadShot.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 506B51FF20B4CFB500DE25AB /* DorothyHeadShot.jpg */; };
 		50D580C820A9035400F65D61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D580C720A9035400F65D61 /* AppDelegate.swift */; };
 		50D580CA20A9035500F65D61 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D580C920A9035500F65D61 /* ViewController.swift */; };
 		50D580CD20A9035500F65D61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50D580CB20A9035500F65D61 /* Main.storyboard */; };
@@ -17,7 +19,8 @@
 		A12D122C20B363F9001C6D62 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A12D122B20B363F9001C6D62 /* UserNotificationsUI.framework */; };
 		A12D122F20B363F9001C6D62 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D122E20B363F9001C6D62 /* NotificationViewController.swift */; };
 		A12D123220B363F9001C6D62 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A12D123020B363F9001C6D62 /* MainInterface.storyboard */; };
-		A12D123620B363F9001C6D62 /* notificationExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A12D122720B363F9001C6D62 /* notificationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A52822B993562461F7D379D2 /* Pods_InspirationalReminders.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5267532367E67FA43FFDCE6C /* Pods_InspirationalReminders.framework */; };
+		B4EDF785B6C6AB6AEAF28331 /* Pods_notificationExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE3DF7627FF924D767BCA34A /* Pods_notificationExtension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +40,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				A12D123620B363F9001C6D62 /* notificationExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -45,7 +47,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		50D580C420A9035400F65D61 /* InspirationalReminders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InspirationalReminders.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3774FC7C13049B133765BDD8 /* Pods-InspirationalReminders.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspirationalReminders.release.xcconfig"; path = "Pods/Target Support Files/Pods-InspirationalReminders/Pods-InspirationalReminders.release.xcconfig"; sourceTree = "<group>"; };
+		3ED4DBCF01A7FED85A5AF71A /* Pods-InspirationalReminders.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspirationalReminders.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InspirationalReminders/Pods-InspirationalReminders.debug.xcconfig"; sourceTree = "<group>"; };
+		506B51FA20B4BCC500DE25AB /* InspirationalReminders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InspirationalReminders.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		506B51FB20B4BCC500DE25AB /* notificationExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = notificationExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		506B51FC20B4BD0700DE25AB /* Animations */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Animations; sourceTree = "<group>"; };
+		506B51FF20B4CFB500DE25AB /* DorothyHeadShot.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DorothyHeadShot.jpg; sourceTree = "<group>"; };
 		50D580C720A9035400F65D61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50D580C920A9035500F65D61 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		50D580CC20A9035500F65D61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -54,12 +61,15 @@
 		50D580D320A9035600F65D61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50D580D920A904DA00F65D61 /* QuoteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCollectionViewCell.swift; sourceTree = "<group>"; };
 		50D580DB20A91C6000F65D61 /* InspirationalReminders.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InspirationalReminders.entitlements; sourceTree = "<group>"; };
-		A12D122720B363F9001C6D62 /* notificationExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = notificationExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5267532367E67FA43FFDCE6C /* Pods_InspirationalReminders.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InspirationalReminders.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C4A34A38590065347E85E82 /* Pods-notificationExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-notificationExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-notificationExtension/Pods-notificationExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		A12D122920B363F9001C6D62 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		A12D122B20B363F9001C6D62 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
 		A12D122E20B363F9001C6D62 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		A12D123120B363F9001C6D62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		A12D123320B363F9001C6D62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9FC6552D0ABDF0119AEDA2A /* Pods-notificationExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-notificationExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-notificationExtension/Pods-notificationExtension.release.xcconfig"; sourceTree = "<group>"; };
+		FE3DF7627FF924D767BCA34A /* Pods_notificationExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_notificationExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A52822B993562461F7D379D2 /* Pods_InspirationalReminders.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,34 +87,41 @@
 			files = (
 				A12D122C20B363F9001C6D62 /* UserNotificationsUI.framework in Frameworks */,
 				A12D122A20B363F9001C6D62 /* UserNotifications.framework in Frameworks */,
+				B4EDF785B6C6AB6AEAF28331 /* Pods_notificationExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		480B35764EE5DE2F0EF44D29 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3ED4DBCF01A7FED85A5AF71A /* Pods-InspirationalReminders.debug.xcconfig */,
+				3774FC7C13049B133765BDD8 /* Pods-InspirationalReminders.release.xcconfig */,
+				7C4A34A38590065347E85E82 /* Pods-notificationExtension.debug.xcconfig */,
+				F9FC6552D0ABDF0119AEDA2A /* Pods-notificationExtension.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		50D580BB20A9035400F65D61 = {
 			isa = PBXGroup;
 			children = (
 				50D580C620A9035400F65D61 /* InspirationalReminders */,
 				A12D122D20B363F9001C6D62 /* notificationExtension */,
 				A12D122820B363F9001C6D62 /* Frameworks */,
-				50D580C520A9035400F65D61 /* Products */,
+				480B35764EE5DE2F0EF44D29 /* Pods */,
+				506B51FA20B4BCC500DE25AB /* InspirationalReminders.app */,
+				506B51FB20B4BCC500DE25AB /* notificationExtension.appex */,
 			);
-			sourceTree = "<group>";
-		};
-		50D580C520A9035400F65D61 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				50D580C420A9035400F65D61 /* InspirationalReminders.app */,
-				A12D122720B363F9001C6D62 /* notificationExtension.appex */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		50D580C620A9035400F65D61 /* InspirationalReminders */ = {
 			isa = PBXGroup;
 			children = (
+				506B51FF20B4CFB500DE25AB /* DorothyHeadShot.jpg */,
+				506B51FC20B4BD0700DE25AB /* Animations */,
 				50D580DB20A91C6000F65D61 /* InspirationalReminders.entitlements */,
 				50D580C720A9035400F65D61 /* AppDelegate.swift */,
 				50D580C920A9035500F65D61 /* ViewController.swift */,
@@ -121,6 +139,8 @@
 			children = (
 				A12D122920B363F9001C6D62 /* UserNotifications.framework */,
 				A12D122B20B363F9001C6D62 /* UserNotificationsUI.framework */,
+				5267532367E67FA43FFDCE6C /* Pods_InspirationalReminders.framework */,
+				FE3DF7627FF924D767BCA34A /* Pods_notificationExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -142,10 +162,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50D580D620A9035600F65D61 /* Build configuration list for PBXNativeTarget "InspirationalReminders" */;
 			buildPhases = (
+				40199C364A92DB2AC53460B3 /* [CP] Check Pods Manifest.lock */,
 				50D580C020A9035400F65D61 /* Sources */,
 				50D580C120A9035400F65D61 /* Frameworks */,
 				50D580C220A9035400F65D61 /* Resources */,
 				A12D123A20B363F9001C6D62 /* Embed App Extensions */,
+				683FC1DE4A68958B3104650B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,13 +176,14 @@
 			);
 			name = InspirationalReminders;
 			productName = InspirationalReminders;
-			productReference = 50D580C420A9035400F65D61 /* InspirationalReminders.app */;
+			productReference = 506B51FA20B4BCC500DE25AB /* InspirationalReminders.app */;
 			productType = "com.apple.product-type.application";
 		};
 		A12D122620B363F9001C6D62 /* notificationExtension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A12D123720B363F9001C6D62 /* Build configuration list for PBXNativeTarget "notificationExtension" */;
 			buildPhases = (
+				07B7439027169980B5480E9D /* [CP] Check Pods Manifest.lock */,
 				A12D122320B363F9001C6D62 /* Sources */,
 				A12D122420B363F9001C6D62 /* Frameworks */,
 				A12D122520B363F9001C6D62 /* Resources */,
@@ -171,7 +194,7 @@
 			);
 			name = notificationExtension;
 			productName = notificationExtension;
-			productReference = A12D122720B363F9001C6D62 /* notificationExtension.appex */;
+			productReference = 506B51FB20B4BCC500DE25AB /* notificationExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -206,7 +229,7 @@
 				Base,
 			);
 			mainGroup = 50D580BB20A9035400F65D61;
-			productRefGroup = 50D580C520A9035400F65D61 /* Products */;
+			productRefGroup = 50D580BB20A9035400F65D61;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -222,6 +245,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				50D580D220A9035600F65D61 /* LaunchScreen.storyboard in Resources */,
+				506B51FD20B4BD0700DE25AB /* Animations in Resources */,
+				506B520020B4CFB500DE25AB /* DorothyHeadShot.jpg in Resources */,
 				50D580CF20A9035600F65D61 /* Assets.xcassets in Resources */,
 				50D580CD20A9035500F65D61 /* Main.storyboard in Resources */,
 			);
@@ -236,6 +261,63 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		07B7439027169980B5480E9D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-notificationExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		40199C364A92DB2AC53460B3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-InspirationalReminders-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		683FC1DE4A68958B3104650B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-InspirationalReminders/Pods-InspirationalReminders-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InspirationalReminders/Pods-InspirationalReminders-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		50D580C020A9035400F65D61 /* Sources */ = {
@@ -410,6 +492,7 @@
 		};
 		50D580D720A9035600F65D61 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3ED4DBCF01A7FED85A5AF71A /* Pods-InspirationalReminders.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -430,6 +513,7 @@
 		};
 		50D580D820A9035600F65D61 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3774FC7C13049B133765BDD8 /* Pods-InspirationalReminders.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -450,6 +534,7 @@
 		};
 		A12D123820B363F9001C6D62 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C4A34A38590065347E85E82 /* Pods-notificationExtension.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UG659HW99G;
@@ -469,6 +554,7 @@
 		};
 		A12D123920B363F9001C6D62 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9FC6552D0ABDF0119AEDA2A /* Pods-notificationExtension.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UG659HW99G;
