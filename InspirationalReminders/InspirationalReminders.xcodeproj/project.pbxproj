@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		506B51FD20B4BD0700DE25AB /* Animations in Resources */ = {isa = PBXBuildFile; fileRef = 506B51FC20B4BD0700DE25AB /* Animations */; };
 		506B520220B4E20800DE25AB /* Animations in Resources */ = {isa = PBXBuildFile; fileRef = 506B51FC20B4BD0700DE25AB /* Animations */; };
+		5082C5C620B61CFF00DA25DB /* notificationExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 506B51FB20B4BCC500DE25AB /* notificationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		50D580C820A9035400F65D61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D580C720A9035400F65D61 /* AppDelegate.swift */; };
 		50D580CA20A9035500F65D61 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D580C920A9035500F65D61 /* ViewController.swift */; };
 		50D580CD20A9035500F65D61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50D580CB20A9035500F65D61 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				5082C5C620B61CFF00DA25DB /* notificationExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -52,6 +54,7 @@
 		506B51FA20B4BCC500DE25AB /* InspirationalReminders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InspirationalReminders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		506B51FB20B4BCC500DE25AB /* notificationExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = notificationExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		506B51FC20B4BD0700DE25AB /* Animations */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Animations; sourceTree = "<group>"; };
+		5082C5C820B62C4D00DA25DB /* Kayak.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Kayak.json; sourceTree = "<group>"; };
 		50D580C720A9035400F65D61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50D580C920A9035500F65D61 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		50D580CC20A9035500F65D61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -146,6 +149,7 @@
 		A12D122D20B363F9001C6D62 /* notificationExtension */ = {
 			isa = PBXGroup;
 			children = (
+				5082C5C820B62C4D00DA25DB /* Kayak.json */,
 				A12D122E20B363F9001C6D62 /* NotificationViewController.swift */,
 				A12D123020B363F9001C6D62 /* MainInterface.storyboard */,
 				A12D123320B363F9001C6D62 /* Info.plist */,

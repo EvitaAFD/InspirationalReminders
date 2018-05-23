@@ -134,7 +134,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         content.body = quote
         
         content.categoryIdentifier = "quote"
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
         let request = UNNotificationRequest(identifier: quote, content: content, trigger: trigger)
         
         self.notificationCenter.add(request, withCompletionHandler: nil)
