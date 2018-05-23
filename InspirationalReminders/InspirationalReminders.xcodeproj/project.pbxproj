@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		506B51FD20B4BD0700DE25AB /* Animations in Resources */ = {isa = PBXBuildFile; fileRef = 506B51FC20B4BD0700DE25AB /* Animations */; };
-		506B520020B4CFB500DE25AB /* DorothyHeadShot.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 506B51FF20B4CFB500DE25AB /* DorothyHeadShot.jpg */; };
 		506B520220B4E20800DE25AB /* Animations in Resources */ = {isa = PBXBuildFile; fileRef = 506B51FC20B4BD0700DE25AB /* Animations */; };
 		50D580C820A9035400F65D61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D580C720A9035400F65D61 /* AppDelegate.swift */; };
 		50D580CA20A9035500F65D61 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D580C920A9035500F65D61 /* ViewController.swift */; };
@@ -53,7 +52,6 @@
 		506B51FA20B4BCC500DE25AB /* InspirationalReminders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InspirationalReminders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		506B51FB20B4BCC500DE25AB /* notificationExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = notificationExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		506B51FC20B4BD0700DE25AB /* Animations */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Animations; sourceTree = "<group>"; };
-		506B51FF20B4CFB500DE25AB /* DorothyHeadShot.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DorothyHeadShot.jpg; sourceTree = "<group>"; };
 		50D580C720A9035400F65D61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50D580C920A9035500F65D61 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		50D580CC20A9035500F65D61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -121,7 +119,6 @@
 		50D580C620A9035400F65D61 /* InspirationalReminders */ = {
 			isa = PBXGroup;
 			children = (
-				506B51FF20B4CFB500DE25AB /* DorothyHeadShot.jpg */,
 				506B51FC20B4BD0700DE25AB /* Animations */,
 				50D580DB20A91C6000F65D61 /* InspirationalReminders.entitlements */,
 				50D580C720A9035400F65D61 /* AppDelegate.swift */,
@@ -247,7 +244,6 @@
 			files = (
 				50D580D220A9035600F65D61 /* LaunchScreen.storyboard in Resources */,
 				506B51FD20B4BD0700DE25AB /* Animations in Resources */,
-				506B520020B4CFB500DE25AB /* DorothyHeadShot.jpg in Resources */,
 				50D580CF20A9035600F65D61 /* Assets.xcassets in Resources */,
 				50D580CD20A9035500F65D61 /* Main.storyboard in Resources */,
 			);
