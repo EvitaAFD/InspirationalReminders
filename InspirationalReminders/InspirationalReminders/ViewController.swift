@@ -10,6 +10,37 @@ import UIKit
 import UserNotifications
 import Lottie
 
+enum GoalSteps: String, EnumCollection {
+    
+    case whoWillBeInCharge = "WHO WILL BE IN CHARGE"
+    case whoWillWatchKids = "WHO WILL WATCH MY KIDS"
+    case whoWillGetAssets = "WHO WILL GET MY ASSESTS"
+    case whoWillGetThings = "WHO WILL GET MY THINGS"
+    case whatHeirsWillGet = "WHAT HEIRS WILL GET"
+    case whoCanAccess = "WHO CAN ACCESS WHAT"
+    
+    var animation: String {
+        switch self {
+        case .whoWillBeInCharge:
+            return "Will"
+        case .whoWillWatchKids:
+            return "Family"
+        case .whoWillGetAssets:
+            return "Condo"
+        case .whoWillGetThings:
+            return "Vault"
+        case .whatHeirsWillGet:
+            return "Trust"
+        case .whoCanAccess:
+            return "Roles"
+        }
+    }
+    
+    var displayName: String {
+        return self.rawValue
+    }
+}
+
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet var collectionView: UICollectionView!
@@ -19,27 +50,20 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         struct Category {
             
-            static let quote = "quote"
+            static let goal = "goal"
         }
         
         struct Action {
             
-            static let showQuote = "showQuote"
+            static let showGoal = "showGoal"
         }
     }
     
     let notificationCenter =  UNUserNotificationCenter.current()
     //Create reuse identifier for cell
     let cell = "cell"
-    let inspirationalQuotes = [
-        "\"No one saves us but ourselves. No one can and no one may. We ourselves must walk the path.\" \n -Buddha",
-        "\"I hated every minute of training, but I said, ’Don’t quit. Suffer now and live the rest of your life as a champion.\" \n -Muhammad Ali",
-        "\"Give, even if you only have a little.\" \n -Buddah",
-        "\"Winning takes precedence over all. There’s no gray area. No almosts.\" \n -Kobe Bryant",
-        "\"Even as a solid rock is unshaken by the wind, so are the wise unshaken by praise or blame.\" \n -Buddah",
-        "\"The key is not the will to win… everybody has that. It is the will to prepare to win that is important.\" \n -Bobby Knight",
-        "\"Nothing can harm you as much as your own thoughts unguarded.\" \n -Buddah",
-        "\"Winning isn’t everything, it’s the only thing.\" \n -Vince Lombardi"]
+    // TODO: can we access display name on allValues, if so how?
+    let goalNames = [GoalSteps.whoWillBeInCharge.displayName, GoalSteps.whoWillWatchKids.displayName, GoalSteps.whoWillGetAssets.displayName, GoalSteps.whoWillGetThings.displayName, GoalSteps.whatHeirsWillGet.displayName, GoalSteps.whoCanAccess.displayName]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,13 +78,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         UNUserNotificationCenter.current().delegate = self
         
         // Define action
-        let showQuoteAction = UNNotificationAction(identifier: Notification.Action.showQuote, title: "View Sweet Quote", options: [.foreground])
+        let showGoalAction = UNNotificationAction(identifier: Notification.Action.showGoal, title: "Complete This Goal", options: [.foreground])
         
-        // Define category for quotes to handle actions on alert.
-        let quoteCategory = UNNotificationCategory(identifier: "quote", actions: [showQuoteAction], intentIdentifiers: [], options: [])
+        // Define category for goals to handle actions on alert.
+        let goalCategory = UNNotificationCategory(identifier: "goal", actions: [showGoalAction], intentIdentifiers: [], options: [])
         
         // Register category with notification center
-        UNUserNotificationCenter.current().setNotificationCategories([quoteCategory])
+        UNUserNotificationCenter.current().setNotificationCategories([goalCategory])
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -82,8 +106,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     //Define number of cells in collection view
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        // Return quotes in cell
-        return self.inspirationalQuotes.count
+        // Return goals in cell
+        return self.goalNames.count
     }
     
     //Create interactive movement of item at selected index path
@@ -94,21 +118,21 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             return UICollectionViewCell()
         }
         
-        cell.cellLabel.text = self.inspirationalQuotes[indexPath.item]
+        cell.cellLabel.text = self.goalNames[indexPath.item]
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let quote = self.inspirationalQuotes[indexPath.item]
+        let goal = self.goalNames[indexPath.item]
         
-        // Set up alert to confirm or cancel selection of quote user wants to be reminded of
+        // Set up alert to confirm or cancel selection of goals user wants to be reminded of
         let alertController = UIAlertController(title: "Great Selection!", message:
-            "Would you like to be reminded of this fab quote: \(quote)?", preferredStyle: UIAlertControllerStyle.alert)
+            "Would you like to be reminded to complete my: \(goal.capitalized) goal?", preferredStyle: UIAlertControllerStyle.alert)
         
         let confirmAction = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.default) { (action) in
-            self.createNotification(withQuote: quote)
+            self.createNotification(withGoal: goal)
         }
         
         let dismissAction = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.cancel) { (action) in
@@ -120,15 +144,18 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         self.present(alertController, animated: true, completion: nil)
     }
     
-    func createNotification (withQuote quote: String) {
+    func createNotification (withGoal goal: String) {
         
         let content = UNMutableNotificationContent()
-        content.title = "Inspirational Reminder"
-        content.body = quote
-        content.categoryIdentifier = "quote"
+        content.title = "Goal Reminder"
+        content.body = goal
+        content.categoryIdentifier = "goal"
         
+        if let goalStep = GoalSteps(rawValue: goal) {
+            content.userInfo = ["animationName": goalStep.animation]
+        }
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
-        let request = UNNotificationRequest(identifier: quote, content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: goal, content: content, trigger: trigger)
         
         self.notificationCenter.add(request, withCompletionHandler: nil)
     }
@@ -147,9 +174,9 @@ extension ViewController: UNUserNotificationCenterDelegate {
         
         switch response.actionIdentifier {
             
-        case Notification.Action.showQuote:
-            let selectedQuote = response.notification.request.identifier
-            self.navigateToSelectedQuote(selectedQuote)
+        case Notification.Action.showGoal:
+            let selectedGoal = response.notification.request.identifier
+            self.navigateToSelectedGoal(selectedGoal)
         default:
             print("Unidentified Action")
         }
@@ -157,12 +184,38 @@ extension ViewController: UNUserNotificationCenterDelegate {
         completionHandler()
     }
     
-    func navigateToSelectedQuote(_ selectedQuote: String) {
+    func navigateToSelectedGoal(_ selectedGoal: String) {
         
-        if let index = inspirationalQuotes.index(of: selectedQuote) {
+        if let index = goalNames.index(of: selectedGoal) {
             
             self.collectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: UICollectionViewScrollPosition.centeredVertically, animated: true)
         }
+    }
+}
+
+public protocol EnumCollection: Hashable {
+    static func cases() -> AnySequence<Self>
+    static var allValues: [Self] { get }
+}
+
+public extension EnumCollection {
+    
+    public static func cases() -> AnySequence<Self> {
+        return AnySequence { () -> AnyIterator<Self> in
+            var raw = 0
+            return AnyIterator {
+                let current: Self = withUnsafePointer(to: &raw) { $0.withMemoryRebound(to: self, capacity: 1) { $0.pointee } }
+                guard current.hashValue == raw else {
+                    return nil
+                }
+                raw += 1
+                return current
+            }
+        }
+    }
+    
+    public static var allValues: [Self] {
+        return Array(self.cases())
     }
 }
 

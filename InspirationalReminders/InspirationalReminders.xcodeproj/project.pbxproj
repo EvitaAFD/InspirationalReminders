@@ -8,8 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		50294C7E20B729630051B644 /* Kayak.json in Resources */ = {isa = PBXBuildFile; fileRef = 5082C5C820B62C4D00DA25DB /* Kayak.json */; };
-		506B51FD20B4BD0700DE25AB /* Animations in Resources */ = {isa = PBXBuildFile; fileRef = 506B51FC20B4BD0700DE25AB /* Animations */; };
-		506B520220B4E20800DE25AB /* Animations in Resources */ = {isa = PBXBuildFile; fileRef = 506B51FC20B4BD0700DE25AB /* Animations */; };
+		50294C9020B75E8E0051B644 /* Condo.json in Resources */ = {isa = PBXBuildFile; fileRef = 50294C8520B75C1B0051B644 /* Condo.json */; };
+		50294C9120B75E9B0051B644 /* Family.json in Resources */ = {isa = PBXBuildFile; fileRef = 50294C8A20B75C1C0051B644 /* Family.json */; };
+		50294C9220B75E9B0051B644 /* Goals_female.json in Resources */ = {isa = PBXBuildFile; fileRef = 50294C8B20B75C1C0051B644 /* Goals_female.json */; };
+		50294C9320B75EB80051B644 /* Goals_male.json in Resources */ = {isa = PBXBuildFile; fileRef = 50294C8620B75C1B0051B644 /* Goals_male.json */; };
+		50294C9420B75EB80051B644 /* Goals_non-binary.json in Resources */ = {isa = PBXBuildFile; fileRef = 50294C8820B75C1B0051B644 /* Goals_non-binary.json */; };
+		50294C9520B75EB80051B644 /* Life.json in Resources */ = {isa = PBXBuildFile; fileRef = 50294C8320B75C1A0051B644 /* Life.json */; };
+		50294C9B20B75EB80051B644 /* Logo.json in Resources */ = {isa = PBXBuildFile; fileRef = 50294C8D20B75C1C0051B644 /* Logo.json */; };
+		50294C9C20B75EB80051B644 /* Pie.json in Resources */ = {isa = PBXBuildFile; fileRef = 50294C8F20B75C1C0051B644 /* Pie.json */; };
+		50294C9D20B75EB80051B644 /* Roles.json in Resources */ = {isa = PBXBuildFile; fileRef = 50294C8E20B75C1C0051B644 /* Roles.json */; };
+		50294C9E20B75EB80051B644 /* Trust.json in Resources */ = {isa = PBXBuildFile; fileRef = 50294C8220B75C1A0051B644 /* Trust.json */; };
+		50294C9F20B75EB80051B644 /* Vault.json in Resources */ = {isa = PBXBuildFile; fileRef = 50294C8720B75C1B0051B644 /* Vault.json */; };
+		50294CA020B75EB80051B644 /* Will.json in Resources */ = {isa = PBXBuildFile; fileRef = 50294C8120B75C1A0051B644 /* Will.json */; };
 		5082C5C620B61CFF00DA25DB /* notificationExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 506B51FB20B4BCC500DE25AB /* notificationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		50D580C820A9035400F65D61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D580C720A9035400F65D61 /* AppDelegate.swift */; };
 		50D580CA20A9035500F65D61 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D580C920A9035500F65D61 /* ViewController.swift */; };
@@ -52,9 +62,20 @@
 /* Begin PBXFileReference section */
 		3774FC7C13049B133765BDD8 /* Pods-InspirationalReminders.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspirationalReminders.release.xcconfig"; path = "Pods/Target Support Files/Pods-InspirationalReminders/Pods-InspirationalReminders.release.xcconfig"; sourceTree = "<group>"; };
 		3ED4DBCF01A7FED85A5AF71A /* Pods-InspirationalReminders.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspirationalReminders.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InspirationalReminders/Pods-InspirationalReminders.debug.xcconfig"; sourceTree = "<group>"; };
+		50294C8120B75C1A0051B644 /* Will.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Will.json; sourceTree = "<group>"; };
+		50294C8220B75C1A0051B644 /* Trust.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Trust.json; sourceTree = "<group>"; };
+		50294C8320B75C1A0051B644 /* Life.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Life.json; sourceTree = "<group>"; };
+		50294C8520B75C1B0051B644 /* Condo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Condo.json; sourceTree = "<group>"; };
+		50294C8620B75C1B0051B644 /* Goals_male.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Goals_male.json; sourceTree = "<group>"; };
+		50294C8720B75C1B0051B644 /* Vault.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Vault.json; sourceTree = "<group>"; };
+		50294C8820B75C1B0051B644 /* Goals_non-binary.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Goals_non-binary.json"; sourceTree = "<group>"; };
+		50294C8A20B75C1C0051B644 /* Family.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Family.json; sourceTree = "<group>"; };
+		50294C8B20B75C1C0051B644 /* Goals_female.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Goals_female.json; sourceTree = "<group>"; };
+		50294C8D20B75C1C0051B644 /* Logo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Logo.json; sourceTree = "<group>"; };
+		50294C8E20B75C1C0051B644 /* Roles.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Roles.json; sourceTree = "<group>"; };
+		50294C8F20B75C1C0051B644 /* Pie.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Pie.json; sourceTree = "<group>"; };
 		506B51FA20B4BCC500DE25AB /* InspirationalReminders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InspirationalReminders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		506B51FB20B4BCC500DE25AB /* notificationExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = notificationExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		506B51FC20B4BD0700DE25AB /* Animations */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Animations; sourceTree = "<group>"; };
 		5082C5C820B62C4D00DA25DB /* Kayak.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Kayak.json; sourceTree = "<group>"; };
 		50D580C720A9035400F65D61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50D580C920A9035500F65D61 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -123,7 +144,6 @@
 		50D580C620A9035400F65D61 /* InspirationalReminders */ = {
 			isa = PBXGroup;
 			children = (
-				506B51FC20B4BD0700DE25AB /* Animations */,
 				50D580DB20A91C6000F65D61 /* InspirationalReminders.entitlements */,
 				50D580C720A9035400F65D61 /* AppDelegate.swift */,
 				50D580C920A9035500F65D61 /* ViewController.swift */,
@@ -150,6 +170,18 @@
 		A12D122D20B363F9001C6D62 /* notificationExtension */ = {
 			isa = PBXGroup;
 			children = (
+				50294C8520B75C1B0051B644 /* Condo.json */,
+				50294C8A20B75C1C0051B644 /* Family.json */,
+				50294C8B20B75C1C0051B644 /* Goals_female.json */,
+				50294C8620B75C1B0051B644 /* Goals_male.json */,
+				50294C8820B75C1B0051B644 /* Goals_non-binary.json */,
+				50294C8320B75C1A0051B644 /* Life.json */,
+				50294C8D20B75C1C0051B644 /* Logo.json */,
+				50294C8F20B75C1C0051B644 /* Pie.json */,
+				50294C8E20B75C1C0051B644 /* Roles.json */,
+				50294C8220B75C1A0051B644 /* Trust.json */,
+				50294C8720B75C1B0051B644 /* Vault.json */,
+				50294C8120B75C1A0051B644 /* Will.json */,
 				5082C5C820B62C4D00DA25DB /* Kayak.json */,
 				A12D122E20B363F9001C6D62 /* NotificationViewController.swift */,
 				A12D123020B363F9001C6D62 /* MainInterface.storyboard */,
@@ -248,7 +280,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				50D580D220A9035600F65D61 /* LaunchScreen.storyboard in Resources */,
-				506B51FD20B4BD0700DE25AB /* Animations in Resources */,
 				50D580CF20A9035600F65D61 /* Assets.xcassets in Resources */,
 				50D580CD20A9035500F65D61 /* Main.storyboard in Resources */,
 			);
@@ -258,8 +289,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50294C9020B75E8E0051B644 /* Condo.json in Resources */,
+				50294CA020B75EB80051B644 /* Will.json in Resources */,
+				50294C9E20B75EB80051B644 /* Trust.json in Resources */,
+				50294C9B20B75EB80051B644 /* Logo.json in Resources */,
+				50294C9F20B75EB80051B644 /* Vault.json in Resources */,
+				50294C9520B75EB80051B644 /* Life.json in Resources */,
+				50294C9D20B75EB80051B644 /* Roles.json in Resources */,
+				50294C9220B75E9B0051B644 /* Goals_female.json in Resources */,
+				50294C9420B75EB80051B644 /* Goals_non-binary.json in Resources */,
+				50294C9C20B75EB80051B644 /* Pie.json in Resources */,
+				50294C9120B75E9B0051B644 /* Family.json in Resources */,
+				50294C9320B75EB80051B644 /* Goals_male.json in Resources */,
 				A12D123220B363F9001C6D62 /* MainInterface.storyboard in Resources */,
-				506B520220B4E20800DE25AB /* Animations in Resources */,
 				50294C7E20B729630051B644 /* Kayak.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
