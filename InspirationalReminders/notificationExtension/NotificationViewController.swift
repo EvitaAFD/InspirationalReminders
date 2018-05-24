@@ -22,21 +22,23 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
         super.viewDidLoad()
 
         self.view.addSubview(animationView)
-        self.animationView.frame = CGRect(x: 0, y: 0, width: 260, height: 260)
-        self.animationView.center = self.view.center
-        self.animationView.contentMode = .scaleAspectFill
         self.animationView.loopAnimation = true
         self.animationView.play()
-        
     }
     
     func didReceive(_ notification: UNNotification) {
+        
         self.label?.text = notification.request.content.body
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
+        let xOffest = self.view.bounds.size.width / 2 - 130
+        let yOffset = self.view.bounds.size.height / 2 - 60
+        
+        self.animationView.frame = CGRect(x: xOffest, y: yOffset, width: 260, height: 260)
+        self.animationView.contentMode = .scaleAspectFill
     }
-
 }
 
