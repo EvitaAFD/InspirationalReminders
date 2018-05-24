@@ -12,47 +12,32 @@ import Lottie
 
 enum GoalSteps: String, EnumCollection {
     
-    case whoWillBeInCharge
-    case whoWillWatchKids
-    case whoWillGetAssets
-    case whoWillGetThings
-    case whatHeirsWillGet
-    case whoCanAccess
+    case whoWillBeInCharge = "WHO WILL BE IN CHARGE"
+    case whoWillWatchKids = "WHO WILL WATCH MY KIDS"
+    case whoWillGetAssets = "WHO WILL GET MY ASSESTS"
+    case whoWillGetThings = "WHO WILL GET MY THINGS"
+    case whatHeirsWillGet = "WHAT HEIRS WILL GET"
+    case whoCanAccess = "WHO CAN ACCESS WHAT"
     
-    // is this going to be a LOTAnimationView type?
-//    var animation: String {
-//        switch self {
-//        case .whoWillBeInCharge:
-//            //How are we passing in these specific animations in the cases?
-//            return "WHO WILL BE IN CHARGE"
-//        case .whoWillWatchKids:
-//            return "WHO WILL WATCH  MY KIDS"
-//        case .whoWillGetAssets:
-//            return "WHO WILL GET MY ASSESTS"
-//        case .whoWillGetThings:
-//            return "WHO WILL GET MY THINGS"
-//        case .whatHeirsWillGet:
-//            return "WHAT HEIRS WILL GET"
-//        case .whoCanAccess:
-//            return "WHO CAN ACCESS WHAT"
-//        }
-//    }
-    
-    var displayName: String {
+    var animation: String {
         switch self {
         case .whoWillBeInCharge:
-            return "WHO WILL BE IN CHARGE"
+            return "Will"
         case .whoWillWatchKids:
-            return "WHO WILL WATCH MY KIDS"
+            return "Family"
         case .whoWillGetAssets:
-            return "WHO WILL GET MY ASSESTS"
+            return "Condo"
         case .whoWillGetThings:
-            return "WHO WILL GET MY THINGS"
+            return "Vault"
         case .whatHeirsWillGet:
-            return "WHAT HEIRS WILL GET"
+            return "Trust"
         case .whoCanAccess:
-            return "WHO CAN ACCESS WHAT"
+            return "Roles"
         }
+    }
+    
+    var displayName: String {
+        return self.rawValue
     }
 }
 
@@ -93,7 +78,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         UNUserNotificationCenter.current().delegate = self
         
         // Define action
-        let showGoalAction = UNNotificationAction(identifier: Notification.Action.showGoal, title: "View Sweet Goal", options: [.foreground])
+        let showGoalAction = UNNotificationAction(identifier: Notification.Action.showGoal, title: "Complete This Goal", options: [.foreground])
         
         // Define category for goals to handle actions on alert.
         let goalCategory = UNNotificationCategory(identifier: "goal", actions: [showGoalAction], intentIdentifiers: [], options: [])
@@ -144,7 +129,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         // Set up alert to confirm or cancel selection of goals user wants to be reminded of
         let alertController = UIAlertController(title: "Great Selection!", message:
-            "Would you like to be reminded to complete this: \(goal.capitalized) goal?", preferredStyle: UIAlertControllerStyle.alert)
+            "Would you like to be reminded to complete my: \(goal.capitalized) goal?", preferredStyle: UIAlertControllerStyle.alert)
         
         let confirmAction = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.default) { (action) in
             self.createNotification(withGoal: goal)
@@ -162,12 +147,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func createNotification (withGoal goal: String) {
         
         let content = UNMutableNotificationContent()
-        content.title = "Inspirational Reminder"
+        content.title = "Goal Reminder"
         content.body = goal
         content.categoryIdentifier = "goal"
-//        content.userInfo = ["goalStep": self.selectedGoalStep]
         
-        
+        if let goalStep = GoalSteps(rawValue: goal) {
+            content.userInfo = ["animationName": goalStep.animation]
+        }
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
         let request = UNNotificationRequest(identifier: goal, content: content, trigger: trigger)
         

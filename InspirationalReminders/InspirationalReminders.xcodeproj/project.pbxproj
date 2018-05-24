@@ -14,11 +14,6 @@
 		50294C9320B75EB80051B644 /* Goals_male.json in Resources */ = {isa = PBXBuildFile; fileRef = 50294C8620B75C1B0051B644 /* Goals_male.json */; };
 		50294C9420B75EB80051B644 /* Goals_non-binary.json in Resources */ = {isa = PBXBuildFile; fileRef = 50294C8820B75C1B0051B644 /* Goals_non-binary.json */; };
 		50294C9520B75EB80051B644 /* Life.json in Resources */ = {isa = PBXBuildFile; fileRef = 50294C8320B75C1A0051B644 /* Life.json */; };
-		50294C9620B75EB80051B644 /* logo_icon_and_tomorrow_blue_background.json in Resources */ = {isa = PBXBuildFile; fileRef = 50294C8020B75C190051B644 /* logo_icon_and_tomorrow_blue_background.json */; };
-		50294C9720B75EB80051B644 /* logo_icon_and_tomorrow_white_background.json in Resources */ = {isa = PBXBuildFile; fileRef = 50294C8920B75C1B0051B644 /* logo_icon_and_tomorrow_white_background.json */; };
-		50294C9820B75EB80051B644 /* logo_icon_blue_background.json in Resources */ = {isa = PBXBuildFile; fileRef = 50294C8420B75C1B0051B644 /* logo_icon_blue_background.json */; };
-		50294C9920B75EB80051B644 /* logo_icon_white_background.json in Resources */ = {isa = PBXBuildFile; fileRef = 50294C7F20B75C190051B644 /* logo_icon_white_background.json */; };
-		50294C9A20B75EB80051B644 /* logo_tomorrow_dot_me_blue_background.json in Resources */ = {isa = PBXBuildFile; fileRef = 50294C8C20B75C1C0051B644 /* logo_tomorrow_dot_me_blue_background.json */; };
 		50294C9B20B75EB80051B644 /* Logo.json in Resources */ = {isa = PBXBuildFile; fileRef = 50294C8D20B75C1C0051B644 /* Logo.json */; };
 		50294C9C20B75EB80051B644 /* Pie.json in Resources */ = {isa = PBXBuildFile; fileRef = 50294C8F20B75C1C0051B644 /* Pie.json */; };
 		50294C9D20B75EB80051B644 /* Roles.json in Resources */ = {isa = PBXBuildFile; fileRef = 50294C8E20B75C1C0051B644 /* Roles.json */; };
@@ -67,20 +62,15 @@
 /* Begin PBXFileReference section */
 		3774FC7C13049B133765BDD8 /* Pods-InspirationalReminders.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspirationalReminders.release.xcconfig"; path = "Pods/Target Support Files/Pods-InspirationalReminders/Pods-InspirationalReminders.release.xcconfig"; sourceTree = "<group>"; };
 		3ED4DBCF01A7FED85A5AF71A /* Pods-InspirationalReminders.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspirationalReminders.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InspirationalReminders/Pods-InspirationalReminders.debug.xcconfig"; sourceTree = "<group>"; };
-		50294C7F20B75C190051B644 /* logo_icon_white_background.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = logo_icon_white_background.json; sourceTree = "<group>"; };
-		50294C8020B75C190051B644 /* logo_icon_and_tomorrow_blue_background.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = logo_icon_and_tomorrow_blue_background.json; sourceTree = "<group>"; };
 		50294C8120B75C1A0051B644 /* Will.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Will.json; sourceTree = "<group>"; };
 		50294C8220B75C1A0051B644 /* Trust.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Trust.json; sourceTree = "<group>"; };
 		50294C8320B75C1A0051B644 /* Life.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Life.json; sourceTree = "<group>"; };
-		50294C8420B75C1B0051B644 /* logo_icon_blue_background.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = logo_icon_blue_background.json; sourceTree = "<group>"; };
 		50294C8520B75C1B0051B644 /* Condo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Condo.json; sourceTree = "<group>"; };
 		50294C8620B75C1B0051B644 /* Goals_male.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Goals_male.json; sourceTree = "<group>"; };
 		50294C8720B75C1B0051B644 /* Vault.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Vault.json; sourceTree = "<group>"; };
 		50294C8820B75C1B0051B644 /* Goals_non-binary.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Goals_non-binary.json"; sourceTree = "<group>"; };
-		50294C8920B75C1B0051B644 /* logo_icon_and_tomorrow_white_background.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = logo_icon_and_tomorrow_white_background.json; sourceTree = "<group>"; };
 		50294C8A20B75C1C0051B644 /* Family.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Family.json; sourceTree = "<group>"; };
 		50294C8B20B75C1C0051B644 /* Goals_female.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Goals_female.json; sourceTree = "<group>"; };
-		50294C8C20B75C1C0051B644 /* logo_tomorrow_dot_me_blue_background.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = logo_tomorrow_dot_me_blue_background.json; sourceTree = "<group>"; };
 		50294C8D20B75C1C0051B644 /* Logo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Logo.json; sourceTree = "<group>"; };
 		50294C8E20B75C1C0051B644 /* Roles.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Roles.json; sourceTree = "<group>"; };
 		50294C8F20B75C1C0051B644 /* Pie.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Pie.json; sourceTree = "<group>"; };
@@ -186,11 +176,6 @@
 				50294C8620B75C1B0051B644 /* Goals_male.json */,
 				50294C8820B75C1B0051B644 /* Goals_non-binary.json */,
 				50294C8320B75C1A0051B644 /* Life.json */,
-				50294C8020B75C190051B644 /* logo_icon_and_tomorrow_blue_background.json */,
-				50294C8920B75C1B0051B644 /* logo_icon_and_tomorrow_white_background.json */,
-				50294C8420B75C1B0051B644 /* logo_icon_blue_background.json */,
-				50294C7F20B75C190051B644 /* logo_icon_white_background.json */,
-				50294C8C20B75C1C0051B644 /* logo_tomorrow_dot_me_blue_background.json */,
 				50294C8D20B75C1C0051B644 /* Logo.json */,
 				50294C8F20B75C1C0051B644 /* Pie.json */,
 				50294C8E20B75C1C0051B644 /* Roles.json */,
@@ -304,16 +289,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50294C9720B75EB80051B644 /* logo_icon_and_tomorrow_white_background.json in Resources */,
 				50294C9020B75E8E0051B644 /* Condo.json in Resources */,
 				50294CA020B75EB80051B644 /* Will.json in Resources */,
 				50294C9E20B75EB80051B644 /* Trust.json in Resources */,
 				50294C9B20B75EB80051B644 /* Logo.json in Resources */,
 				50294C9F20B75EB80051B644 /* Vault.json in Resources */,
 				50294C9520B75EB80051B644 /* Life.json in Resources */,
-				50294C9920B75EB80051B644 /* logo_icon_white_background.json in Resources */,
-				50294C9A20B75EB80051B644 /* logo_tomorrow_dot_me_blue_background.json in Resources */,
-				50294C9820B75EB80051B644 /* logo_icon_blue_background.json in Resources */,
 				50294C9D20B75EB80051B644 /* Roles.json in Resources */,
 				50294C9220B75E9B0051B644 /* Goals_female.json in Resources */,
 				50294C9420B75EB80051B644 /* Goals_non-binary.json in Resources */,
@@ -322,7 +303,6 @@
 				50294C9320B75EB80051B644 /* Goals_male.json in Resources */,
 				A12D123220B363F9001C6D62 /* MainInterface.storyboard in Resources */,
 				50294C7E20B729630051B644 /* Kayak.json in Resources */,
-				50294C9620B75EB80051B644 /* logo_icon_and_tomorrow_blue_background.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
