@@ -15,5 +15,4 @@ target 'notificationExtension' do
 
   # Pods for notificationExtension
   pod 'lottie-ios'
-
 end

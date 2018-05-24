@@ -14,15 +14,28 @@ import Lottie
 
 class NotificationViewController: UIViewController, UNNotificationContentExtension {
 
+    let animationView = LOTAnimationView(name: "Kayak")
+    
     @IBOutlet var label: UILabel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any required interface initialization here.
+
+        self.view.addSubview(animationView)
+        self.animationView.frame = CGRect(x: 0, y: 0, width: 260, height: 260)
+        self.animationView.center = self.view.center
+        self.animationView.contentMode = .scaleAspectFill
+        self.animationView.loopAnimation = true
+        self.animationView.play()
+        
     }
     
     func didReceive(_ notification: UNNotification) {
         self.label?.text = notification.request.content.body
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
     }
 
 }
