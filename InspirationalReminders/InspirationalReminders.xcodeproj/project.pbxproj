@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50294C7E20B729630051B644 /* Kayak.json in Resources */ = {isa = PBXBuildFile; fileRef = 5082C5C820B62C4D00DA25DB /* Kayak.json */; };
 		506B51FD20B4BD0700DE25AB /* Animations in Resources */ = {isa = PBXBuildFile; fileRef = 506B51FC20B4BD0700DE25AB /* Animations */; };
 		506B520220B4E20800DE25AB /* Animations in Resources */ = {isa = PBXBuildFile; fileRef = 506B51FC20B4BD0700DE25AB /* Animations */; };
 		5082C5C620B61CFF00DA25DB /* notificationExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 506B51FB20B4BCC500DE25AB /* notificationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -259,6 +260,7 @@
 			files = (
 				A12D123220B363F9001C6D62 /* MainInterface.storyboard in Resources */,
 				506B520220B4E20800DE25AB /* Animations in Resources */,
+				50294C7E20B729630051B644 /* Kayak.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
