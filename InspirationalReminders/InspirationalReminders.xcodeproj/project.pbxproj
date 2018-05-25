@@ -31,6 +31,7 @@
 		A12D122C20B363F9001C6D62 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A12D122B20B363F9001C6D62 /* UserNotificationsUI.framework */; };
 		A12D122F20B363F9001C6D62 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12D122E20B363F9001C6D62 /* NotificationViewController.swift */; };
 		A12D123220B363F9001C6D62 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A12D123020B363F9001C6D62 /* MainInterface.storyboard */; };
+		A1A808CA20B8750400AA1744 /* SelectedGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A808C920B8750400AA1744 /* SelectedGoalViewController.swift */; };
 		A52822B993562461F7D379D2 /* Pods_InspirationalReminders.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5267532367E67FA43FFDCE6C /* Pods_InspirationalReminders.framework */; };
 		B4EDF785B6C6AB6AEAF28331 /* Pods_notificationExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE3DF7627FF924D767BCA34A /* Pods_notificationExtension.framework */; };
 /* End PBXBuildFile section */
@@ -87,11 +88,13 @@
 		50D580DB20A91C6000F65D61 /* InspirationalReminders.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InspirationalReminders.entitlements; sourceTree = "<group>"; };
 		5267532367E67FA43FFDCE6C /* Pods_InspirationalReminders.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InspirationalReminders.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C4A34A38590065347E85E82 /* Pods-notificationExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-notificationExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-notificationExtension/Pods-notificationExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		A11240BD20B7883100B87B91 /* notificationExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = notificationExtension.entitlements; sourceTree = "<group>"; };
 		A12D122920B363F9001C6D62 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		A12D122B20B363F9001C6D62 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
 		A12D122E20B363F9001C6D62 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		A12D123120B363F9001C6D62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		A12D123320B363F9001C6D62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1A808C920B8750400AA1744 /* SelectedGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedGoalViewController.swift; sourceTree = "<group>"; };
 		F9FC6552D0ABDF0119AEDA2A /* Pods-notificationExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-notificationExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-notificationExtension/Pods-notificationExtension.release.xcconfig"; sourceTree = "<group>"; };
 		FE3DF7627FF924D767BCA34A /* Pods_notificationExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_notificationExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -149,6 +152,7 @@
 				50D580C920A9035500F65D61 /* ViewController.swift */,
 				50D580D920A904DA00F65D61 /* QuoteCollectionViewCell.swift */,
 				50D580CB20A9035500F65D61 /* Main.storyboard */,
+				A1A808C920B8750400AA1744 /* SelectedGoalViewController.swift */,
 				50D580CE20A9035600F65D61 /* Assets.xcassets */,
 				50D580D020A9035600F65D61 /* LaunchScreen.storyboard */,
 				50D580D320A9035600F65D61 /* Info.plist */,
@@ -170,6 +174,7 @@
 		A12D122D20B363F9001C6D62 /* notificationExtension */ = {
 			isa = PBXGroup;
 			children = (
+				A11240BD20B7883100B87B91 /* notificationExtension.entitlements */,
 				50294C8520B75C1B0051B644 /* Condo.json */,
 				50294C8A20B75C1C0051B644 /* Family.json */,
 				50294C8B20B75C1C0051B644 /* Goals_female.json */,
@@ -252,6 +257,11 @@
 					};
 					A12D122620B363F9001C6D62 = {
 						CreatedOnToolsVersion = 9.3.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -370,6 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1A808CA20B8750400AA1744 /* SelectedGoalViewController.swift in Sources */,
 				50D580CA20A9035500F65D61 /* ViewController.swift in Sources */,
 				50D580DA20A904DA00F65D61 /* QuoteCollectionViewCell.swift in Sources */,
 				50D580C820A9035400F65D61 /* AppDelegate.swift in Sources */,
@@ -544,13 +555,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = InspirationalReminders/InspirationalReminders.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UG659HW99G;
+				DEVELOPMENT_TEAM = 7KLRW8RU62;
 				INFOPLIST_FILE = InspirationalReminders/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.evedenison.InspirationalReminders;
+				PRODUCT_BUNDLE_IDENTIFIER = com.evedenison.InspirationalReminders2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -565,13 +576,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = InspirationalReminders/InspirationalReminders.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UG659HW99G;
+				DEVELOPMENT_TEAM = 7KLRW8RU62;
 				INFOPLIST_FILE = InspirationalReminders/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.evedenison.InspirationalReminders;
+				PRODUCT_BUNDLE_IDENTIFIER = com.evedenison.InspirationalReminders2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -582,15 +593,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7C4A34A38590065347E85E82 /* Pods-notificationExtension.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = notificationExtension/notificationExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UG659HW99G;
+				DEVELOPMENT_TEAM = 7KLRW8RU62;
 				INFOPLIST_FILE = notificationExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.evedenison.InspirationalReminders.notificationExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.evedenison.InspirationalReminders2.notificationExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -602,15 +614,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F9FC6552D0ABDF0119AEDA2A /* Pods-notificationExtension.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = notificationExtension/notificationExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UG659HW99G;
+				DEVELOPMENT_TEAM = 7KLRW8RU62;
 				INFOPLIST_FILE = notificationExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.evedenison.InspirationalReminders.notificationExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.evedenison.InspirationalReminders2.notificationExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
