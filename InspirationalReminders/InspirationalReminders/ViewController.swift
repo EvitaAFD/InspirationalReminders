@@ -159,24 +159,36 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         self.notificationCenter.add(request, withCompletionHandler: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let vc = segue.destination as? SelectedGoalViewController,
+            let goalStep = sender as? GoalSteps {
+            vc.selectedGoalStep = goalStep
+        }
+    }
 }
 
 // MARK: UNUserNotificationDelegate
 extension ViewController: UNUserNotificationCenterDelegate {
     
     // Allows more control over how local notifcations are handled and allows us to see notification even if app is in foreground
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         
         completionHandler(.alert)
     }
     
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
         
         switch response.actionIdentifier {
             
         case Notification.Action.showGoal:
-            let selectedGoal = response.notification.request.identifier
-            self.navigateToSelectedGoal(selectedGoal)
+            let selectedGoalIdentifier = response.notification.request.identifier
+            self.navigateToSelectedGoal(selectedGoalIdentifier)
         default:
             print("Unidentified Action")
         }
@@ -184,18 +196,20 @@ extension ViewController: UNUserNotificationCenterDelegate {
         completionHandler()
     }
     
-    func navigateToSelectedGoal(_ selectedGoal: String) {
+    func navigateToSelectedGoal(_ goalIdentifier: String) {
+        guard let goalStep = GoalSteps(rawValue: goalIdentifier) else { return }
         
-        if let index = goalNames.index(of: selectedGoal) {
-            
-            self.collectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: UICollectionViewScrollPosition.centeredVertically, animated: true)
-        }
+        performSegue(withIdentifier: "segueGoalStepIdentifier", sender: goalStep)
     }
 }
 
 public protocol EnumCollection: Hashable {
     static func cases() -> AnySequence<Self>
     static var allValues: [Self] { get }
+}
+
+enum foo: String {
+    case some
 }
 
 public extension EnumCollection {
